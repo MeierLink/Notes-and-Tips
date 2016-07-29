@@ -2,4 +2,9 @@
 Tips para desarrollo
 
 <SHELL>
-$ echo "hello world" | mail -s "a subject" someone@somewhere.com
+#Carga de archivo configuracion
+APP_HOME=/home/user/shell/proyecto_shell
+. $APP_HOME/config/config.properties
+
+#Envio de correo
+echo "hello world" | mailx -s "subject" someone@somewhere.com
