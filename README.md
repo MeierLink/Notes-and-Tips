@@ -8,3 +8,5 @@ APP_HOME=/home/user/shell/proyecto_shell
 
 #Envio de correo
 echo "hello world" | mailx -s "subject" someone@somewhere.com
+
+#cat fichero.tar.gz | uuencode fichero.tar.gz | mail -s "subject" correo@dominio.com  // transforma de binario a texto
