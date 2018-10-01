@@ -1,0 +1,51 @@
+/** 
+conexion con BD, ejecutar consulta o  SP y traer los datos 
+*/
+
+//para conexion
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList; // para guardar objetos en un arraylist
+
+	protected void procListaAprobar(ClaseDeUser user, HttpServletRequest req, HttpServletResponse res, HttpSession ses) 
+  throws Exception {
+  
+  ClaseDeUser msgUser = (ClaseDeUser) ses.getAttribute("currUser");
+  
+  Connection con = null;
+	CallableStatement stm = null;
+	ResultSet rs = null;
+  
+  con.getConnection();
+  String sqlQuery = "sentencia sql";
+  stm = conexion.prepareCall(sqlQuery);
+	rs = stm.executeQuery();
+  
+  ArrayList<ObjetoDeTabla> beanList = new ArrayList<ObjetoDeTabla>();
+			ModPorAprobar a = new ModPorAprobar();
+			//guardando datos de bd en lista de objetos
+			while (rs.next()) {
+				ObjetoDeTabla odt = new ObjetoDeTabla();
+				odt.setvalor1(rs.getString("valor1"));
+				odt.setvalor2(rs.getString("valor2"));
+				odt.setvalor3(rs.getString("valor3"));
+				beanList.addRow(odt);
+			}
+			ses.setAttribute("listCliente", beanList); // puede enviarse a session o en response
+			callPage(LangPath + "pagina.jsp", req, res);
+      
+     } catch (Exception e) {
+			flexLog("Exception calling page " + e);
+		} finally {
+			doEndConnection();
+		}
+    
+ //*NOTA: Para SP que no retorna funciona mejor eso y sin guardar en un result set:
+ 
+ conexion = getConnection(); 
+			String sqlAprueba = "call esquema.SP_STORED_PROCEDURE('parametro1','parametro2')";
+			stm = conexion.prepareCall(sqlAprueba);
+			stm.execute(); // hace la diferencia
+			System.out.println("consulta ejecutada");
+			doEndConnection();
