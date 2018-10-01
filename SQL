@@ -17,11 +17,22 @@ CREATE TABLE esquema.tabla (
     fecha_registro TIMESTAMP
 );
 
-//Crear SP  y llamar SP
-CREATE PROCEDURE Iesquema.SP_STORED_PROCEDURE(IN parametro1 CHAR(10),IN parametro2 DECIMAL(11)) 
+//Crear SP y SP con IF
+CREATE PROCEDURE esquema.SP_STORED_PROCEDURE(IN parametro1 CHAR(10),IN parametro2 DECIMAL(11)) 
 BEGIN
 sentencia1... WHERE columna1=parametro1;
 sentencia2... WHERE columna2=parametro2;
 END
 
+CREATE PROCEDURE esquema.SP_CON_IF(IN ID CHAR(10),IN TELEFONO DECIMAL(11), IN CORREO CHAR(40)) 
+BEGIN
+IF TELEFONO IS NOT NULL THEN
+sentencia1...
+ELSEIF CORREO IS NOT NULL THEN
+sentencia2...
+END IF;
+sentencia3...
+END
+
+//Llamar SP
 CALL esquema.SP_STORED_PROCEDURE('parametro1','parametro2'); 
