@@ -1,7 +1,6 @@
-# Tips
-Tips para desarrollo
+#Shell Scripting  - Bash y sh
+#En SO GNU/Linux ver en "/etc" para apps en "/usr/bin"
 
-<SHELL>
 #Carga de archivo configuracion
 APP_HOME=/home/user/shell/proyecto_shell
 . $APP_HOME/config/config.properties
