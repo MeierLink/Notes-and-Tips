@@ -1,0 +1,76 @@
+/**
+service sobrescrito para manejar un mantenedor con JSP - SERVLET
+*/
+public void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+		MessageContext mc = null;
+		ClaseUser msgUser = null;
+		HttpSession session = null;
+
+		session = (HttpSession) req.getSession(false);
+
+		if (session == null) {
+			try {
+				res.setContentType("text/html");
+				printLogInAgain(res.getWriter());
+			} catch (Exception e) {
+				e.printStackTrace();
+				flexLog("Exception ocurred... Exception = " + e);
+			}
+		} else {
+
+			int screen = Valor_main;
+
+			try {
+
+				msgUser = (datapro.eibs.beans.Clase) session.getAttribute("currUser");
+				LangPath = super.rootPath + msgUser.getAlgo() + "/";
+
+				try {
+					screen = Integer.parseInt(req.getParameter("SCREEN"));
+				} catch (Exception e) {
+					flexLog("Screen set to default value");
+				}
+
+				switch (screen) {
+
+				case LISTA_APROBAR:
+					//LLamamos metodo principal 1ra vista
+					procListaAprobar(msgUser, req, res, session);
+					break;
+				default:
+					try {
+
+						switch (screen) {
+						// Acciones
+						case R_APRUEBA:
+							procAprueba(mc, msgUser, req, res, session);
+							break;
+						case R_RECHAZA:
+							procRechaza(mc, msgUser, req, res, session);
+							break;
+						case R_SALIR:
+							procSalir(mc, msgUser, req, res, session);
+							break;
+						default:
+							res.sendRedirect(super.srctx + LangPath + super.devPage);
+							break;
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+						res.sendRedirect(super.srctx +"/servlet/package.Servlet?SCREEN=800");
+					} finally {
+						s.close();
+					}
+
+					break;
+				}
+
+			} catch (Exception e) {
+				flexLog("Error: " + e);
+				res.sendRedirect(super.srctx +"/servlet/package.Servlet?SCREEN=800");
+			}
+
+		}
+
+	}
