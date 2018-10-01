@@ -1,0 +1,27 @@
+//Consultas SQL-DB2(Driver DB2 for AS/400 JTOpen)
+INSERT INTO esquema.tabla VALUES('valor1','valor2',(current timestamp))
+
+SELECT * FROM esquema.tabla WHERE columna='algo'
+SELECT alias_t1.c1 alias_c1, alias_t2.c2 alias_c2 FROM tabla1 alias_t1, tabla2 alias_t2 WHERE aliast1.c1 = aliast2.c1  
+
+UPDATE esquema.tabla SET estado='algo' WHERE codigo='algo'
+
+DELETE FROM esquema.tabla WHERE campo='algo' AND campo2='algo' //Considerar borrar especificamente algo con id o borrado logico
+
+//Crear tabla
+CREATE TABLE esquema.tabla (
+    id DECIMAL(9) not null,
+    campo1 DECIMAL(11),
+    campo2 CHAR(40),
+    campo3 CHAR(1),
+    fecha_registro TIMESTAMP
+);
+
+//Crear SP  y llamar SP
+CREATE PROCEDURE Iesquema.SP_STORED_PROCEDURE(IN parametro1 CHAR(10),IN parametro2 DECIMAL(11)) 
+BEGIN
+sentencia1... WHERE columna1=parametro1;
+sentencia2... WHERE columna2=parametro2;
+END
+
+CALL esquema.SP_STORED_PROCEDURE('parametro1','parametro2'); 
