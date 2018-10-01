@@ -48,4 +48,6 @@ import java.util.ArrayList; // para guardar objetos en un arraylist
 			stm = conexion.prepareCall(sqlAprueba);
 			stm.execute(); // hace la diferencia
 			System.out.println("consulta ejecutada");
+			beanList.clear();
 			doEndConnection();
+			res.sendRedirect(super.srctx +"/servlet/package.Servlet?SCREEN=800");
