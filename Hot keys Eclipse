@@ -1,0 +1,13 @@
+// Hot keys useful
+
+Ctrl + Shift + R    : Busca algún recurso (archivo).
+Ctrl + Shift + T    : Busca alguna clase.
+Ctrl + Shift + O    : Organiza imports  (agrega en caso de no estar).
+Ctrl + 1            : Solución rapida (Muestra opciones).
+Ctrl + L            : Ir a "n" linea.
+Ctrl + /            : Comenta una linea.
+Ctrl + Shift + /    : Comenta varias lineas.
+Ctrl + D            : Borra la linea.
+Ctrl + F            : Buscar o reemplazar.
+Ctrl + Q            : Va hacia la ultima edición de codigo.
+Ctrl + Alt + (Arriba o abajo) : duplica la linea actual.
