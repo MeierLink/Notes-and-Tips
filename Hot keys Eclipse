@@ -10,4 +10,5 @@ Ctrl + Shift + /    : Comenta varias lineas.
 Ctrl + D            : Borra la linea.
 Ctrl + F            : Buscar o reemplazar.
 Ctrl + Q            : Va hacia la ultima edición de codigo.
+Ctrl + espacio      : Muestra metodos/etiquetas aplicables a la Clase/lenguaje en la que estes. 
 Ctrl + Alt + (Arriba o abajo) : duplica la linea actual.
