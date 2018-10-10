@@ -7,6 +7,7 @@ Ctrl + 1            : Solución rapida (Muestra opciones).
 Ctrl + L            : Ir a "n" linea.
 Ctrl + /            : Comenta una linea.
 Ctrl + Shift + /    : Comenta varias lineas.
+Ctrl + Shift + F    : Auto indent.
 Ctrl + D            : Borra la linea.
 Ctrl + F            : Buscar o reemplazar.
 Ctrl + Q            : Va hacia la ultima edición de codigo.
