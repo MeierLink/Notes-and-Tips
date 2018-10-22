@@ -26,7 +26,7 @@ List<String> lista = new ArrayList<>();
 		while(iterator.hasNext()) {
 			System.out.println("Iterador es: "+iterator.next() );
 		}
-// Map HashMap y recorrer con Sety keySet
+// Map HashMap y recorrer con Set y keySet
 Map<String, String> map = new HashMap<>();
 		map.put("1st", "first");
 		map.put("2nd", "second");
