@@ -4,7 +4,7 @@ String[] arreglo = {"generic_name_1","generic_name_2","generic_name_3","generic_
 		System.out.print(dato+"|");
 	}
 
-// Recorrer Lista con For Each  (Con List podemos usar ArrayList o LinkedList)
+// Recorrer Lista con For Each  (Con List podemos usar ArrayList o LinkedList o Vector)
 List<String> lista = new ArrayList<>();
 		lista.add("dato1");
 		lista.add("dato2");
