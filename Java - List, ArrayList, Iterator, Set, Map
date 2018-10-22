@@ -1,0 +1,42 @@
+// Recorrer Arreglo con For Each
+String[] arreglo = {"generic_name_1","generic_name_2","generic_name_3","generic_name_4"};
+	for (String dato : arreglo) {
+		System.out.print(dato+"|");
+	}
+
+// Recorrer Lista con For Each  (Con List podemos usar ArrayList o LinkedList o Vector)
+List<String> lista = new ArrayList<>();
+		lista.add("dato1");
+		lista.add("dato2");
+		lista.add("dato3");
+		lista.add("dato4");
+		System.out.println("Lista: "+lista);
+		lista.remove(3);
+
+		for (String dato : lista) {
+			System.out.println(dato);
+		}
+	
+// Recorrer Lista en Java 1.8 +
+		lista.forEach(System.out::println);
+		
+// Usar iterator en Listas
+		Iterator<String> iterator = lista.listIterator();
+		
+		while(iterator.hasNext()) {
+			System.out.println("Iterador es: "+iterator.next() );
+		}
+// Map HashMap y recorrer con Sety keySet
+Map<String, String> map = new HashMap<>();
+		map.put("1st", "first");
+		map.put("2nd", "second");
+		map.put("3rd", "third");
+		map.put("4th", "fourth");
+		map.put("5th", "fifth");
+		System.out.println("Map is : "+map);
+		System.out.println("The word for 2nd is:  is : "+map.get("2nd"));
+
+Set<String> keys = map.keySet();
+		for(String key : keys) {
+			System.out.println("for each con map: " + key );
+		}
