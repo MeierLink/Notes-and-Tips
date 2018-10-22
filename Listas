@@ -1,0 +1,17 @@
+//Recorrer Listas
+
+List<String> lista = new ArrayList<>();
+		
+		lista.add("dato1");
+		lista.add("dato2");
+		lista.add("dato3");
+		lista.add("dato4");
+		System.out.println("Lista: "+lista);
+
+// Recorrer con for each
+		for (String dato : lista) {
+			System.out.println(dato);
+		}
+// Recorrer en Java 1.8 +
+		lista.forEach(System.out::println);
+		
